@@ -24,6 +24,7 @@ export const columns: ColumnDef<User>[] = [
                         width={40}
                         height={40}
                         className="w-full h-full object-cover"
+                        unoptimized
                     />
                 </div>
             )
