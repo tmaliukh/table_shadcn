@@ -106,7 +106,8 @@ export const columns: ColumnDef<User>[] = [
         header: "Phone",
     },
     {
-        accessorKey: "dob",
+        accessorFn: (row) => row.dob.age,
+        id: "age",
         header: ({ column }) => {
             return (
                 <Button
@@ -119,7 +120,7 @@ export const columns: ColumnDef<User>[] = [
             )
         },
         cell: ({ row }) => {
-            const dob = row.getValue("dob") as { age: number }
+            const dob = row.original.dob
             return <span>{dob.age} years</span>
         },
     },
